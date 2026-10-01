@@ -1,91 +1,194 @@
-/* Dashboard Banner Styling */
-.dashboard-banner {
-    background: linear-gradient(135deg, #1a73e8, #4285f4);
-    color: white;
-    padding: 2.5rem 2rem;
-    border-radius: 10px;
-    margin-bottom: 2rem;
-    box-shadow: 0 4px 12px rgba(26, 115, 232, 0.2);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Resource Library</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            color: #333333;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
 
-.banner-text h2 {
-    margin: 0;
-    font-size: 1.8rem;
-}
+        /* Top Header Navigation */
+        .site-header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
 
-.banner-text p {
-    margin: 0.5rem 0 0;
-    opacity: 0.9;
-    font-size: 1.05rem;
-}
+        .site-header h1 {
+            font-size: 1.5rem;
+            color: #1a73e8;
+            margin: 0;
+            letter-spacing: 0.5px;
+        }
 
-.banner-stats {
-    background: rgba(255, 255, 255, 0.15);
-    padding: 0.8rem 1.2rem;
-    border-radius: 8px;
-    text-align: center;
-    backdrop-filter: blur(5px);
-}
+        .site-logo {
+            font-size: 1.8rem;
+        }
 
-.banner-stats span {
-    display: block;
-    font-size: 1.4rem;
-    font-weight: bold;
-}
+        /* Main Content Container */
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
 
-.banner-stats small {
-    font-size: 0.85rem;
-    opacity: 0.85;
-}
-<div class="container">
-    
-    <!-- Dashboard Banner -->
-    <div class="dashboard-banner">
-        <div class="banner-text">
-            <h2>Welcome Back, Teacher!</h2>
-            <p>Access and download your latest educational documents below.</p>
-        </div>
-        <div class="banner-stats">
-            <span>3+</span>
-            <small>Active Resources</small>
-        </div>
+        /* Dashboard Banner */
+        .dashboard-banner {
+            background: linear-gradient(135deg, #1a73e8, #4285f4);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(26, 115, 232, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .banner-text h2 {
+            margin: 0;
+            font-size: 1.6rem;
+        }
+
+        .banner-text p {
+            margin: 0.4rem 0 0;
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+
+        .banner-icon {
+            font-size: 2.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.8rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Section Title */
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #202124;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-subtitle {
+            font-size: 0.9rem;
+            color: #5f6368;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Grid Layout for Resource Cards Side-by-Side */
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1rem;
+        }
+
+        /* Resource Card Button Styling */
+        .resource-card {
+            display: flex;
+            flex-direction: column;
+            background: #ffffff;
+            border: 1px solid #dadce0;
+            padding: 1.2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #1a73e8;
+            font-weight: bold;
+            font-size: 0.95rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+            transition: all 0.2s ease;
+        }
+
+        .resource-card span {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .resource-card:hover {
+            background: #f8f9fa;
+            border-color: #1a73e8;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(26, 115, 232, 0.1);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            color: #70757a;
+            font-size: 0.85rem;
+        }
+    </style>
 </head>
-    <header>
-        <h1>📚 lubya teaching resources</h1>
-        <p>Free lesson plans, lesson notes, and classroom resources.</p>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="site-header">
+        <div class="site-logo">📁</div>
+        <h1>ACADEMIC RESOURCE LIBRARY</h1>
     </header>
 
-    <div class="grid">
-        <!-- Resource Card 1 -->
-        <div class="card">
-            <span class="tag">Math </span>
-            <h3>MATHEMATICS PLE PAST PAPERS </h3>
-            <p></p>
-            <a href="https://drive.google.com/drive/folders/1D0Moh2NzPGu04Or7HpgPPKtLwIX4wP5x?usp=sharing" target="_blank">Open Document</a>
-
-        <!-- Resource Card 2 -->
-        <div class="card">
-            <span class="tag">Science - Grade 5</span>
-            <h3>The Water Cycle Lesson</h3>
-            <p>Complete notes and a diagram setup tracing evaporation, condensation, and precipitation.</p>
-            <a href="#" class="download-btn">📥 Download File</a>
+    <!-- Main Container -->
+    <div class="container">
+        
+        <!-- Dashboard Banner -->
+        <div class="dashboard-banner">
+            <div class="banner-text">
+                <h2>WELCOME BACK, TEACHER!</h2>
+                <p>Access and download your latest educational documents below.</p>
+            </div>
+            <div class="banner-icon">📚</div>
         </div>
 
-        <!-- Resource Card 3 -->
-        <div class="card">
-            <span class="tag">English - Grade 1</span>
-            <h3>Phonics Reading Game</h3>
-            <p>Printable flashcards to help early learners practice short vowel sound rules and matching words.</p>
-            <a href="#" class="download-btn">📥 Download Materials</a>
+        <!-- Section Info -->
+        <div class="section-title">AVAILABLE DOCUMENTS</div>
+        <div class="section-subtitle">Click any card below to view or download resources:</div>
+
+        <!-- Side-by-Side Resource Grid -->
+        <div class="resource-grid">
+            
+            <!-- Link 1 -->
+            <a href="https://drive.google.com/drive/folders/1D0Moh2NzPGu04Or7HpgPPKtLwIX4wP5x?usp=sharing" target="_blank">Open Document</a1" target="_blank" class="resource-card">
+                <span>📂</span>
+                MATHEMATICS NOTES & WORKSHEETS
+            </a>
+
+            <!-- Link 2 -->
+            <a href="YOUR_GOOGLE_DRIVE_LINK_2" target="_blank" class="resource-card">
+                <span>📂</span>
+                TERM EXAM PAST PAPERS
+            </a>
+
+            <!-- Link 3 -->
+            <a href="YOUR_GOOGLE_DRIVE_LINK_3" target="_blank" class="resource-card">
+                <span>📂</span>
+                LESSON PLANS & GUIDES
+            </a>
+
         </div>
-    <!-- Resource card 4 -->
-        <div class= "card">
-        <span class="tag">SOCIAL STUDIES </span>
-        <h3>primary seven past papers</h3>
-        <a href="#" https://drive.google.com/drive/folders/1D0Moh2NzPGu04Or7HpgPPKtLwIX4wP5x?usp=sharing" target="_blank">open Document</a>
-            <body>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Academic Resource Library. All rights reserved.</p>
+    </footer>
+
