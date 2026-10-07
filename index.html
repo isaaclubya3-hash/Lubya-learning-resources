@@ -5,190 +5,178 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Academic Resource Library</title>
     <style>
-        /* Global Styles */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f6f9;
-            color: #333333;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: #333;
             line-height: 1.6;
+            padding: 2rem;
         }
 
-        /* Top Header Navigation */
-        .site-header {
-            background-color: #ffffff;
-            border-bottom: 1px solid #e0e0e0;
-            padding: 1rem 2rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .site-header h1 {
-            font-size: 1.5rem;
-            color: #1a73e8;
-            margin: 0;
-            letter-spacing: 0.5px;
-        }
-
-        .site-logo {
-            font-size: 1.8rem;
-        }
-
-        /* Main Content Container */
         .container {
-            max-width: 900px;
-            margin: 2rem auto;
-            background: white;
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            max-width: 1200px;
+            margin: 0 auto;
         }
-       /* Dashboard Banner with Modern Gradient */
+
+        /* Dashboard Banner with Classroom Photo Background */
         .dashboard-banner {
-            background: linear-gradient(135deg, #0f9d58, #1a73e8);
+            background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('watermarked_img_16534300735559887914.jpg');
+            background-size: cover;
+            background-position: center;
             color: white;
-            padding: 2.5rem 2rem;
+            padding: 3rem 2.5rem;
             border-radius: 12px;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 15px rgba(15, 157, 88, 0.25);
+            margin-bottom: 2.5rem;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
-        }
-
-        .banner-text h2 {
-            margin: 0;
-            font-size: 1.6rem;
+            flex-wrap: wrap;
+            gap: 1.5rem;
         }
 
-        .banner-text p {
-            margin: 0.4rem 0 0;
+        .banner-content h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .banner-content p {
+            font-size: 1.1rem;
             opacity: 0.9;
-            font-size: 1rem;
         }
 
-        .banner-icon {
-            font-size: 2.5rem;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 0.8rem;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .badge {
+            background-color: #0f9d58;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         /* Section Title */
         .section-title {
-            font-size: 1.1rem;
-            font-weight: bold;
-            color: #202124;
-            margin-bottom: 0.5rem;
-        }
-
-        .section-subtitle {
-            font-size: 0.9rem;
-            color: #5f6368;
+            font-size: 1.5rem;
             margin-bottom: 1.5rem;
+            color: #1a202c;
+            border-left: 4px solid #1a73e8;
+            padding-left: 0.75rem;
         }
 
-        /* Grid Layout for Resource Cards Side-by-Side */
+        /* Resource Grid for Folders */
         .resource-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
         }
 
-        /* Resource Card Button Styling */
         .resource-card {
-            display: flex;
-            flex-direction: column;
-            background: #ffffff;
-            border: 1px solid #dadce0;
-            padding: 1.2rem;
-            border-radius: 8px;
+            background: white;
+            padding: 1.75rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
             text-decoration: none;
-            color: #1a73e8;
-            font-weight: bold;
-            font-size: 0.95rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
-            transition: all 0.2s ease;
-        }
-
-        .resource-card span {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
+            color: #2d3748;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: 1px solid #e2e8f0;
         }
 
         .resource-card:hover {
-            background: #f8f9fa;
+            transform: translateY(-4px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
             border-color: #1a73e8;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(26, 115, 232, 0.1);
+        }
+
+        .resource-icon {
+            font-size: 2.5rem;
+        }
+
+        .resource-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+            color: #1a73e8;
+        }
+
+        .resource-info p {
+            font-size: 0.85rem;
+            color: #718096;
         }
 
         /* Footer */
         footer {
             text-align: center;
+            margin-top: 4rem;
             padding: 1.5rem;
-            color: #70757a;
-            font-size: 0.85rem;
+            color: #718096;
+            font-size: 0.9rem;
+            border-top: 1px solid #e2e8f0;
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Navigation -->
-    <header class="site-header">
-        <div class="site-logo">📁</div>
-        <h1>ACADEMIC RESOURCE LIBRARY</h1>
-    </header>
-
-    <!-- Main Container -->
     <div class="container">
-        
         <!-- Dashboard Banner -->
         <div class="dashboard-banner">
-            <div class="banner-text">
-                <h2>WELCOME BACK, TEACHER!</h2>
-                <p>Access and download your latest educational documents below.</p>
+            <div class="banner-content">
+                <h1>Academic Resource Library</h1>
+                <p>Instant, login-free access to all student notes, exams, and learning materials.</p>
             </div>
-            <div class="banner-icon">📚</div>
+            <div class="badge">100+ Free Documents</div>
         </div>
 
-        <!-- Section Info -->
-        <div class="section-title">AVAILABLE DOCUMENTS</div>
-        <div class="section-subtitle">Click any card below to view or download resources:</div>
-
-        <!-- Side-by-Side Resource Grid -->
+        <!-- Library Categories -->
+        <h2 class="section-title">Browse Document Categories</h2>
+        
         <div class="resource-grid">
             
-            <!-- Link 1 -->
-            <a href="https://drive.google.com/drive/folders/1D0Moh2NzPGu04Or7HpgPPKtLwIX4wP5x?usp=sharing" target="_blank">Open Document</a1" target="_blank" class="resource-card">
-                <span>📂</span>
-                MATHEMATICS NOTES & WORKSHEETS
+            <!-- Category 1: Update 'mathematics' to match your exact folder name -->
+            <a href="mathematics/" class="resource-card">
+                <span class="resource-icon">📂</span>
+                <div class="resource-info">
+                    <h3>Mathematics</h3>
+                    <p>Notes, exercises, and answer sheets</p>
+                </div>
             </a>
-       <div class="resource-grid">
-    
-    <!-- Links to your uploaded category folders -->
-    <a href="https://github.com/isaaclubya3-hash/Lubya-learning-resources/tree/main/p.4%20and%20p.5%20and%20p.6" class="resource-card">
-        <span>📂</span>
-        Mathematics Library
-    </a>
 
-    </a>
+            <!-- Category 2: Update 'exams' to match your exact folder name -->
+            <a href="exams/" class="resource-card">
+                <span class="resource-icon">📝</span>
+                <div class="resource-info">
+                    <h3>Exams & Past Papers</h3>
+                    <p>Term tests and revision papers</p>
+                </div>
+            </a>
 
-</div>
-            
+            <!-- Category 3: Update 'lesson-plans' to match your exact folder name -->
+            <a href="lesson-plans/" class="resource-card">
+                <span class="resource-icon">📚</span>
+                <div class="resource-info">
+                    <h3>Lesson Plans & Guides</h3>
+                    <p>Curriculum guides and teacher notes</p>
+                </div>
+            </a>
+
+            <!-- Add more cards here if you have extra folders, just change the folder link -->
 
         </div>
 
+        <footer>
+            <p>&copy; 2026 Academic Resource Library. Free access for all students.</p>
+        </footer>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Academic Resource Library. All rights reserved.</p>
-    </footer>
-
+</body>
+</html>
